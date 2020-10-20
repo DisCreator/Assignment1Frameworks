@@ -20,7 +20,7 @@ abstract class Abstract_Controller
 	The abstract method that has to be implemented
 	in order to create the model for the controller
 	*/
-	protected function setModel(){
+	protected function setModel(Observable_Model $model){
 		$this->model = $model;
 	}
 	
@@ -28,8 +28,8 @@ abstract class Abstract_Controller
 	The abstract method that has to be implemented for
 	each controller in order for it to have a view
 	*/
-	protected function setView(){
-		$this->view = $view;
+	protected function setView(View $v){
+		$this->view = $v;
 	}
 	/*
 	The method used to execute the controller

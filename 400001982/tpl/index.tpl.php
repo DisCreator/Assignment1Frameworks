@@ -30,96 +30,53 @@
 		<header></header>
 		<main>
 			<h1>Most Popular</h1>
-			<div class="centered">
-				<section>
-				<a href="#"><img src="images/datastructures.jpg" alt="First Course" title="Data structures">
-				<span class="course-title">Introduction to Data Structures</span>
-				<span>Course Instructor</span></a>
-				</section>
-				<section>
-				<a href="#"><img src="images/compiler.png" alt="Second course" title="Compiler Theory">
-				<span class="course-title">Compiler Theory</span>
-				<span>Course Instructor</span></a>
-				</section>
-				<section>
-				<a href="#"><img src="images/software.jpg" alt="Third Course" title="Software Engineering">
-				<span class="course-title">Software Engineering</span>
-				<span>Course Instructor</span></a>
-				</section>
-				<section>
-				<a href="#"><img src="images/molecular.jpg" alt="Fourth Course" title="Molecular Biochemistry">
-				<span class="course-title">Molecular Biochemistry</span>
-				<span>Course Instructor</span></a>
-				</section>
-			</div>
-			<div class="centered">
-				<section>
-				<a href="#"><img src="images/renewable.jpg" alt="Fifth Course" title="Renewable Energy">
-				<span class="course-title">Renewable Energy</span>
-				<span>Course Instructor</span></a>
-				</section>
-				<section>
-				<a href="#"><img src="images/marine.jpg" alt="Sixth Course" title="Marine Biology">
-				<span class="course-title">Marine Biology</span>
-				<span>Course Instructor</span></a>
-				</section>
-				<section>
-				<a href="#"><img src="images/astronomy.jpg" alt="Seventh Course" title="Introduction to Astronomy">
-				<span class="course-title">Introduction to Astronomy</span>
-				<span>Course Instructor</span></a>
-				</section>
-				<section>
-				<a href="#"><img src="images/robotics.jpg" alt="Eighth Course" title="Robotics">
-				<span class="course-title">Robotics</span>
-				<span>Course Instructor</span></a>
-				</section>
-			</div>
+
+			<?php
+				$i=-1;
+				foreach ($popular as $key => $value) : 
+					$i++;
+				if(($i % 4)==0): ?>
+					<div class="centered">
+				<?php endif; ?>
 			
+				<section>
+				<a href="#"><img src="images/<?php echo $value[4]?>" alt="<?php echo $value[0]?>" title="<?php echo $value[0]?>">
+				<span class="course-title"><?php echo $value[0]?></span>
+				<span> <?php echo $instructors[$value[0]]?> </span></a>
+				</section>
+				<?php
+					if (($i % 4)==3): 
+				?>
+				</div>
+				<?php
+					endif;
+				endforeach;
+				?>
+
+				
 			<h1>Learner Recommended</h1>
-			<div class="centered">
+			<?php
+				$i=-1;
+				foreach ($recommended as $key => $value) : 
+					$i++;
+				if(($i % 4)==0): ?>
+					<div class="centered">
+				<?php endif; ?>
+			
 				<section>
-				<a href="#"><img src="images/ai.jpg" alt="Learner first Course" title="Artificial Intelligence">
-				<span class="course-title">Artificial Intelligence</span>
-				<span>Course Instructor</span></a>
+				<a href="#"><img src="images/<?php echo $value[4]?>" alt="<?php echo $value[0]?>" title="<?php echo $value[0]?>">
+				<span class="course-title"><?php echo $value[0]?></span>
+				<span> <?php echo $instructors[$value[0]]?> </span></a>
 				</section>
-				<section>
-				<a href="#"><img src="images/networksecurity.jpg" alt="Learner Second Course" title="Network and Security">
-				<span class="course-title">Networks &amp; Security</span>
-				<span>Course Instructor</span></a>
-				</section>
-				<section>
-				<a href="#"><img src="images/humandisease.jpg" alt="Learner Third Course" title="Biochemistry of Human Disease">
-				<span class="course-title">Biochemistry of Human Disease</span>
-				<span>Course Instructor</span></a>
-				</section>
-				<section>
-				<a href="#"><img src="images/genetics.jpg" alt="Learner Fourth Course" title="Introduction to Genetics">
-				<span class="course-title">Introduction to Genetics</span>
-				<span>Course Instructor</span></a>
-				</section>
-			</div>
-			<div class="centered">
-			<section>
-				<a href="#"><img src="images/mathematics.jpg" alt="Learner Fifth Course" title="Basic Mathematics">
-				<span class="course-title">Basic Mathematics</span>
-				<span>Course Instructor</span></a>
-			</section>
-			<section>
-				<a href="#"><img src="images/electronics.jpg" alt="Learner Sixth Course" title="Introduction to Electronics">
-				<span class="course-title">Introduction to Electronics</span>
-				<span>Course Instructor</span></a>
-			</section>
-			<section>
-				<a href="#"><img src="images/oop.jpg" alt="Learner Seventh Course" title="Object-Oriented Programming">
-				<span class="course-title">Object-Oriented Programming</span>
-				<span>Course Instructor</span></a>
-			</section>
-			<section>
-				<a href="#"><img src="images/physics.jpg" alt="Learner Eigth Course" title="Computational Physics">
-				<span class="course-title">Computational Physics</span>
-				<span>Course Instructor</span></a>
-			</section>
-			</div>
+				<?php
+					if (($i % 4)==3): 
+				?>
+				</div>
+				<?php
+					endif;
+				endforeach;
+				?>
+
 			<footer>
 				<nav>
 					<ul>
@@ -133,3 +90,5 @@
 		</main>
 	</body>
 </html>
+
+
